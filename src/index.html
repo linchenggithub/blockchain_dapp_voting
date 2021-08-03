@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Voting Results</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background-color:antiquewhite;">
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center" style="font-family:Courier; color:Blue; font-size: 50px;">Voting on Ethereum Blockchain</h1>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+            <button class="enableEthereumButton">Enable Ethereum</button>
+          </div>
+          <div id="content" style="display: none;">
+            <p class="text-center" style="font-family:Courier; color:red; font-size: 50px;">!WARNING!</p>
+            <p class="text-center" style="font-family:Courier; color:purple; font-size: 15px;"><mark>Please vote careuflly.<br> Once submitted, your vote cannot be retracted or rectified.</mark></p>
+            <table class="table" style="width:100%;border: 5px solid yellowgreen">
+              <thead style="vertical-align:bottom">
+                <tr style="font-family:Courier; color:Blue; font-size: 20px;" >
+                  <th style="border: 5px solid yellowgreen;" scope="col">#</th>
+                  <th style="border: 5px solid yellowgreen" scope="col">Option</th>
+                  <th style="border: 5px solid yellowgreen" scope="col" scope="col">No. of Votes</th>
+                </tr>
+              </thead>
+              <tbody style="border: 5px solid yellowgreen; font-family:Arial" scope="col" id="optionResults">
+              </tbody>
+            </table>
+            <hr/>
+            <form onSubmit="App.castVote(); return false;">
+              <div class="form-group" >
+                <label for="optionSelect">Select Option</label>
+                <select class="form-control" id="optionSelect">
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary", style="margin-left:300px;">Vote</button>
+              <hr />
+            </form>
+            <p class="text-center" style="font-family:Courier; color:Purple; font-size: 20px;"><mark>Your Logged In Account</mark></p>
+            <p id="accountAddress" class="text-center" style="font-family:Courier; color:Purple; font-size: 10px;"></p>
+            <p id='thankyoutext' class="text-center" style="font-family:Cursive; color:gold; font-size: 50px;">Happy Voting!</p>
+            <p id="votedForOption" class="text-center" style="font-family:Courier; color:Red; font-size: 30px;"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
